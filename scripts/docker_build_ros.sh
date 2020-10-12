@@ -17,6 +17,11 @@ if [[ "$ROS_DISTRO" == "noetic" || "$ROS_DISTRO" == "all" ]]; then
 	sh ./scripts/docker_build.sh ros:noetic-ros-base-l4t-r32.4.3 Dockerfile.ros.noetic --build-arg BASE_IMAGE=$BASE_IMAGE
 fi
 
+# ROS2 Dashing
+if [[ "$ROS_DISTRO" == "dashing" || "$ROS_DISTRO" == "all" ]]; then
+	sh ./scripts/docker_build.sh ros:dashing-ros-base-l4t-r32.4.3 Dockerfile.ros.dashing --build-arg BASE_IMAGE=$BASE_IMAGE
+fi
+
 # ROS2 Eloquent
 if [[ "$ROS_DISTRO" == "eloquent" || "$ROS_DISTRO" == "all" ]]; then
 	sh ./scripts/docker_build.sh ros:eloquent-ros-base-l4t-r32.4.3 Dockerfile.ros.eloquent --build-arg BASE_IMAGE=$BASE_IMAGE
